@@ -1,0 +1,8 @@
+
+HKEY_LOCAL_MACHINE\Software\Classes\PerlScript\Shell
+
+HKEY_LOCAL_MACHINE\Software\Classes\PerlScript\Shell\Open
+
+HKEY_LOCAL_MACHINE\Software\Classes\PerlScript\Shell\Open\Command
+    (Default)    REG_EXPAND_SZ    "C:\Program Files\StrawberryPerl\perl\bin\perl.exe" "%1"
+

@@ -4,6 +4,10 @@ first  before-assoc
 
 then   before-ftype
 
+       -> ftype PerlScript="C:\Program Files\StrawberryPerl\perl\bin\perl.exe" "%1"
+
+then   after-ftype
+
 
 reg query HKLM\Software\Classes\.pl                                                         /s  > HKLM-Software-Classes-.pl
 reg query HKLM\Software\Classes\PerlScript                                                  /s  > HKLM-Software-Classes-PerlScript
