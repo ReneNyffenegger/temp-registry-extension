@@ -1,13 +1,10 @@
 $null = new-psDrive -name HKUS -psProvider registry -root HKEY_USERS
 
-
 $ext   = '.pl'
 $ftype = 'PerlScript'
 $exe   = 'C:\Users\Rene\StrawberryPerl\perl\bin\perl.exe'
 
 $userSid = 'S-1-5-21-1986187950-1154198019-2155599821-1001'
-
-
 
 #
 #   ------------ Remove keys ---------------
@@ -50,7 +47,6 @@ removeRegistryKey "HKUS:\$userSid\Software\Microsoft\Windows\CurrentVersion\Expl
 # if (test-path "HKUS:\$userSid\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext") {
 #   remove-item -recurse -force "HKUS:\$userSid\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext"
 # }
-
 
 
 #
