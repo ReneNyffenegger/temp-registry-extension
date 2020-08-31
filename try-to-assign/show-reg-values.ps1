@@ -1,7 +1,8 @@
 $null    =  new-psDrive -name HKUS -psProvider registry -root HKEY_USERS
 
 $ext     = '.pl'
-$ftype   = 'PerlScript'
+#$ftype   = 'PerlScript'
+$ftype   = '.pl_auto_file'
 $userSid = 'S-1-5-21-1986187950-1154198019-2155599821-1001'
 
 function showRegValue($key, $valName) {
