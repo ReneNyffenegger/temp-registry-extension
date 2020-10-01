@@ -49,11 +49,8 @@ removeRegistryKey "HKLM:\Software\Classes\$ftype"
  
 
 # removeRegistryKey "HKUS:\$userSid\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext" 
-  removeRegistryKey "$reg_root_user\$userSid\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext" 
-
-
   removeRegistryKey "$reg_root_user\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext\UserChoice"
-# remove-itemProperty "$reg_root_user\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext\UserChoice" "ProgId"0
+  removeRegistryKey "$reg_root_user\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext" 
 
 # if (test-path "HKUS:\$userSid\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext") {
 #   remove-item -recurse -force "HKUS:\$userSid\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\$ext"
@@ -80,3 +77,5 @@ removeRegistryKey "HKLM:\Software\Classes\$ftype"
 # echo                                                                                          "`"$exe`" `"%1`""
 # $null = set-item -path "HKUS:\$userSid\Software\Classes\PerlScript\shell\Open\Command" -value "`"$exe`" `"%1`""
   $null = set-item -path "$reg_root_user\$userSid\Software\Classes\$ftype\shell\Open\Command" -value "`"$exe`" `"%1`""
+
+  echo "now start ms-settings:defaultapps"
