@@ -1,0 +1,34 @@
+
+.tiff - 2020-10-14
+
+   Before fiddling with anything:
+
+     HKUS:\S-1-5-21-1986187950-1154198019-2155599821-1001
+       \Software\Classes\.tiff  ->
+       \Software\Classes\IrfanView.tif\shell\open\Command does not exist
+       \Software\Classes\IrfanView\shell\open\Command does not exist
+       \Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.tiff\UserChoice  -> PhotoViewer.FileAssoc.Tiff
+   
+     hklm:
+       \Software\Classes\.tiff  -> IrfanView.tif
+       \Software\Classes\IrfanView.tif\shell\open\Command  -> "C:\Program Files\IrfanView\i_view64.exe" "%1"
+       \Software\Classes\IrfanView\shell\open\Command  -> "C:\Program Files\IrfanView\i_view64.exe" "%1"
+       \Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.tiff\UserChoice does not exist
+
+   Running as adminsitrator:
+
+       C:\Users\Rene\bin\SetUserFTA.exe .tiff IrfanView
+
+    Registry values noew:
+
+      HKUS:\S-1-5-21-1986187950-1154198019-2155599821-1001
+          \Software\Classes\.tiff  ->
+          \Software\Classes\IrfanView\shell\open\Command does not exist
+          \Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.tiff\UserChoice  -> IrfanView
+      
+        hklm:
+          \Software\Classes\.tiff  -> IrfanView.tif
+          \Software\Classes\IrfanView\shell\open\Command  -> "C:\Program Files\IrfanView\i_view64.exe" "%1"
+          \Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.tiff\UserChoice does not exist
+
+     

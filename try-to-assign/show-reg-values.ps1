@@ -8,8 +8,8 @@ $null    =  new-psDrive -name HKUS -psProvider registry -root HKEY_USERS
 # $ftype   = 'IrfanView.jpg'
 #
   $ext     = '.tiff'
-# $ftype   = 'IrfanView.jpg'
-  $ftype   = 'IrfanView.tif'
+# $ftype   = 'IrfanView.tif'
+  $ftype   = 'IrfanView'
 
 $userSid = 'S-1-5-21-1986187950-1154198019-2155599821-1001'
   $reg_root_user="HKUS:\$userSid" # used if no admin access possible
