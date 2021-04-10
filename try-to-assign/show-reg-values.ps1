@@ -2,7 +2,7 @@ $null    =  new-psDrive -name HKUS -psProvider registry -root HKEY_USERS
 
   $ext     = '.pl'
 # $ftype   = '.pl_auto_file'
-  $ftype   = 'PerlScript'
+# $ftype   = 'PerlScript'
 
 # $ext     = '.jpg'
 # $ftype   = 'IrfanView.jpg'
@@ -13,22 +13,24 @@ $null    =  new-psDrive -name HKUS -psProvider registry -root HKEY_USERS
 
   $ext     = '.pdf'
 # $ftype   = '.pl_auto_file'
-  $ftype   = 'pdf_tq84'
+# $ftype   = 'pdf_tq84'
 
 function showRegValue($root, $key, $valName) {
 
   $completeKey = "$root$key"
 
   if (test-path $completeKey) {
-    write-host "    $key $value -> $((get-item $completeKey).GetValue($valName))"
+#   write-host "    $key $value -> $((get-item $completeKey).GetValue($valName))"
+    write-host ("    {0,-90}: {1}" -f $key, ((get-item $completeKey).GetValue($valName)))
   }
   else {
-    write-host "    $key does not exist"
+    write-host ("    {0,-90}: does not exist" -f $key)
   }
 }
 
 function showMultipleRegValues($root) {
 
+   $ftype =  (get-item "$root\Software\Classes\$ext").GetValue('')
    
    write-host ''
    write-host "  $root"
