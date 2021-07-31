@@ -24,28 +24,33 @@ removeRegistryKey $regFileExts
 removeRegistryKey $regClassFileExt
 removeRegistryKey $regFtype
 
-# q $null = new-item -path $regFileExts
+if ($true) {
+
+   $null = new-item -path $regFileExts
+   $null = new-item -path $regFileExts\OpenWithProgids
+   set-itemProperty -path $regFileExts\OpenWithProgids -name $ftype -value ([byte[]] @()) # -type none
+
+#  $null = new-item -path $regFileExts\OpenWithList
+#  set-itemProperty -path $regFileExts\OpenWithList  -name a       -value "`"$exe`" `"%1`""
+
+#
+#  set-itemProperty -path $regFileExts\OpenWithList  -name a       -value "`"$exe`" `"%1`""
+#  set-itemProperty -path $regFileExts\OpenWithList  -name MRUList -value a
+#
 # q 
-# q # $null = new-item -path $regFileExts\OpenWithList
-# q 
-# q 
-# q # set-itemProperty -path $regFileExts\OpenWithList  -name a       -value "`"$exe`" `"%1`""
-# q # set-itemProperty -path $regFileExts\OpenWithList  -name MRUList -value a
-# q 
-# q set-item $regFileExts $ftype
+#          set-item       $regFileExts $ftype
 # q 
 # q # set-itemProperty -path $regFileExts\OpenWithProgids -name $ftype -value ([byte[]] @()) # -type none
 
 
-$null = new-item -path    $regClassFileExt
-        set-item          $regClassFileExt $ftype
-        set-itemProperty  $regClassFileExt -name 'Content Type' -value 'text/x-FtOne'
+}
+else {
 
-$null = new-item -path    $regClassFileExt\OpenWithProgids
-        set-itemProperty  $regClassFileExt\OpenWithProgids -name $ftype -value ''
+  $null = new-item -path    $regClassFileExt
+          set-item          $regClassFileExt $ftype
+}
 
 # - - - - 
-
 
 
   $null = new-item -path "$regFtype"
