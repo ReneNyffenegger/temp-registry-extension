@@ -1,5 +1,3 @@
-# "C:\WINDOWS\py.exe" "%L" %*
-
 set-strictMode -version 3
 
 function removeRegistryKey($key) {
