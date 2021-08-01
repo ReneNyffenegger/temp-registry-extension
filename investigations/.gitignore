@@ -1,2 +1,2 @@
-prog-1.exe
-prog-1.obj
+prog-*.exe
+prog-*.obj
